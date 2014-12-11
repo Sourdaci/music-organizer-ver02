@@ -65,6 +65,19 @@ public class MusicOrganizer
     }
     
     /**
+     * Muestra por pantalla el nombre y posicion de todas las canciones almacenadas
+     */
+    public void listAllFiles(){
+        if(files.size() > 0){
+            for(String song : files){
+                System.out.println(song);
+            }
+        }else{
+            System.out.println("Lista de canciones vacia");
+        }
+    }
+    
+    /**
      * Remove a file from the collection.
      * @param index The index of the file to be removed.
      */
