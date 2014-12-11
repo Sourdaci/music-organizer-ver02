@@ -69,8 +69,10 @@ public class MusicOrganizer
      */
     public void listAllFiles(){
         if(files.size() > 0){
+            int posicion = 1;
             for(String song : files){
-                System.out.println(song);
+                System.out.println(posicion + " -> " + song);
+                posicion++;
             }
         }else{
             System.out.println("Lista de canciones vacia");
