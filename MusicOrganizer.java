@@ -113,10 +113,15 @@ public class MusicOrganizer
      * Muestra las canciones de la lista que contengan la cadena indicada
      */
     public void listMatching(String buscar){
+        boolean encontrado = false;
         for(String filename : files){
             if(filename.contains(buscar)){
+                encontrado = true;
                 System.out.println(filename);
             }
+        }
+        if(!encontrado){
+            System.out.println("No se encuentra ninguna cancion que contenga: " + buscar);
         }
     }
 }
