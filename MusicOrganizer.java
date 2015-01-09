@@ -32,17 +32,17 @@ public class MusicOrganizer
         files.add(filename);
     }
     
-	/**
-	* Prepara una base de canciones para trabajar en clase
-	*/
-	public void addBaseFiles(){
-	    int i;
-		String songs[] = {"creci en los 80.mp3", "nueva generacion.mp3", "game over.mp3", "paradise city.mp3"};
-		for(i=0;i<4;i++){
-			addFile("audio/" + songs[i]);
-		}
-	}
-	
+    /**
+    * Prepara una base de canciones para trabajar en clase
+    */
+    public void addBaseFiles(){
+        int i;
+        String songs[] = {"creci en los 80.mp3", "nueva generacion.mp3", "game over.mp3", "paradise city.mp3"};
+        for(i=0;i<4;i++){
+            addFile("audio/" + songs[i]);
+        }
+    }
+    
     /**
      * Return the number of files in the collection.
      * @return The number of files in the collection.
@@ -107,5 +107,16 @@ public class MusicOrganizer
     public void stopPlaying()
     {
         player.stop();
+    }
+    
+    /**
+     * Muestra las canciones de la lista que contengan la cadena indicada
+     */
+    public void listMatching(String buscar){
+        for(String filename : files){
+            if(filename.contains(buscar)){
+                System.out.println(filename);
+            }
+        }
     }
 }
