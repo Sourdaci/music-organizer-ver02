@@ -124,4 +124,20 @@ public class MusicOrganizer
             System.out.println("No se encuentra ninguna cancion que contenga: " + buscar);
         }
     }
+    
+    /**
+     * Realiza la preescucha de las canciones que contengan la cadena indicada
+     */
+    public void preListen(String buscar){
+        boolean encontrado = false;
+        for(String filename : files){
+            if(filename.contains(buscar)){
+                encontrado = true;
+                player.playSample(filename);
+            }
+        }
+        if(!encontrado){
+            System.out.println("No se encuentra ninguna cancion que contenga: " + buscar);
+        }
+    }
 }
