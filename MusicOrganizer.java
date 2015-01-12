@@ -37,9 +37,9 @@ public class MusicOrganizer
     */
     public void addBaseFiles(){
         int i;
-        String songs[] = {"creci en los 80.mp3", "nueva generacion.mp3", "game over.mp3", "paradise city.mp3"};
+        String songs[] = {"creci en los 80", "nueva generacion", "game over", "paradise city"};
         for(i=0;i<4;i++){
-            addFile("audio/" + songs[i]);
+            addFile("audio/" + songs[i] + ".mp3");
         }
     }
     
@@ -139,5 +139,24 @@ public class MusicOrganizer
         if(!encontrado){
             System.out.println("No se encuentra ninguna cancion que contenga: " + buscar);
         }
+    }
+    
+    /**
+     * Devuelve el indice de la lista del primer elemento que contenga la cadena buscada
+     * Si no hay ningun elemento que la contenga, se devuelve -1
+     */
+    public int findFirst(String buscar){
+        boolean found = false;
+        int index = 0;
+        while (!found && index < files.size()){
+            if(files.get(index).contains(buscar)){
+                found = true;
+            }
+            index++;
+        }
+        if(!found){
+            index = -1;
+        }
+        return index;
     }
 }
